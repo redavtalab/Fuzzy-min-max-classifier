@@ -179,6 +179,10 @@ class FuzzyMMC:
 
 				elif vk[i] < vj[i] < wj[i] < wk[i]:
 					delta_new = min(delta_old, min(wj[i] - vk[i], wk[i] - vj[i]))
+				
+				else:  #There is no overlaps between two boxes
+                    			min_overlap_index = -1
+                    			break
 
 				if delta_old - delta_new > 0:
 					min_overlap_index = i
